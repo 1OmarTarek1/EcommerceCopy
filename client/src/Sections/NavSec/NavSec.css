@@ -1,0 +1,23 @@
+.Navbar {
+  /* margin-bottom: 20px; */
+}
+.NavContainer {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 20px;
+  background-color: aqua;
+}
+.NavContainer a {
+  text-decoration: none;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
