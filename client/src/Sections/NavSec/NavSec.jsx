@@ -17,39 +17,36 @@ const NavSec = ({ setIsAuthenticated, isAuthenticated }) => {
     <div className="Navbar">
       <div className="NavContainer">
         <div className="logoWrapper">
-          <NavLink to={"/"}>WebLOGO</NavLink>
+          <NavLink to={"/products"}>WebLOGO</NavLink>
         </div>
         <ul className="navLinks">
           <li className="navLi">
-            <NavLink to="/" className="navLink">
-              link
-            </NavLink>
-          </li>
-          <li className="navLi">
             <NavLink to="/products" className="navLink">
-              Shope
+              Home
             </NavLink>
           </li>
           {isAuthenticated && localStorage.getItem("type") === "admin" ? (
             <li className="navLi">
               <NavLink to="/AdminHome" className="navLink">
-                AdminLink
+                Ads
               </NavLink>
             </li>
           ) : (
             <></>
           )}
+          <li className="navLi">
+            <div className="navLink shopeCard">Shope Card</div>
+          </li>
+          <div className="logoutBtn">
+            {isAuthenticated ? (
+              <button className="" onClick={logoutHandler}>
+                Logout
+              </button>
+            ) : (
+              <></>
+            )}
+          </div>
         </ul>
-        <div className="shope">
-          <NavLink to={"!#"}>ShopeCard</NavLink>
-          {isAuthenticated ? (
-            <button className="" onClick={logoutHandler}>
-              Logout
-            </button>
-          ) : (
-            <></>
-          )}
-        </div>
       </div>
     </div>
   );

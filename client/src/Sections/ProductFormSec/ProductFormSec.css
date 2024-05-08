@@ -1,31 +1,31 @@
-.container {
+ProductFormSec.container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
 
-h1 {
+.ProductFormSec h1 {
   text-align: center;
 }
 
-.manager-section {
+.ProductFormSec .manager-section {
   margin-top: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
 }
 
-.manager-section h2 {
+.ProductFormSec .manager-section h2 {
   margin-top: 0;
 }
 
-form {
+.ProductFormSec form {
   margin-bottom: 20px;
 }
 
-input[type="text"],
-input[type="password"],
-textarea {
+.ProductFormSec input[type="text"],
+.ProductFormSec input[type="password"],
+.ProductFormSec textarea {
   margin-bottom: 10px;
   padding: 8px;
   font-size: 16px;
@@ -34,7 +34,7 @@ textarea {
   border-radius: 5px;
 }
 
-button {
+.ProductFormSec button {
   padding: 10px 20px;
   font-size: 16px;
   background-color: #007bff;
@@ -44,23 +44,23 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.ProductFormSec button:hover {
   background-color: #0056b3;
 }
 
-ul {
+.ProductFormSec ul {
   list-style-type: none;
   padding: 0;
 }
 
-li {
+.ProductFormSec li {
   margin-bottom: 10px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-li button {
+.ProductFormSec li button {
   background-color: #dc3545;
   color: #fff;
   border: none;
@@ -68,6 +68,6 @@ li button {
   cursor: pointer;
 }
 
-li button:hover {
+.ProductFormSec li button:hover {
   background-color: #c82333;
 }

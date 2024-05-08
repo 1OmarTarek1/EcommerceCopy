@@ -9,7 +9,9 @@
   justify-content: space-between;
   align-items: center;
   padding-inline: 20px;
-  background-color: aqua;
+  background-color: var(--color-primary);
+  backdrop-filter: blur(20px);
+  box-shadow: 0px 0px 4px 1px #000;
 }
 .NavContainer a {
   text-decoration: none;
@@ -20,4 +22,27 @@
   display: flex;
   align-items: center;
   gap: 15px;
+}
+
+/*start shop card*/
+
+.shopeCard {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.shopeCard:hover {
+  color: var(--color-darkestB);
+}
+.shopeCard:focus {
+  color: var(--color-darkestB);
+}
+
+.Navbar ul {
+  padding: 0;
+  margin: 0;
+}
+.Navbar ul li {
+  padding: 0;
+  margin: 0;
+  border: none;
 }

@@ -3,6 +3,7 @@ import classes from "./Home.module.css";
 import { ProductCard } from "../ProductCard/ProductCard";
 import { useHistory } from "react-router-dom";
 import api from "../../api";
+import "./home.css";
 import { ProductFormSec } from "../../Sections";
 
 export const Home = ({ setIsAuthenticated }) => {
@@ -81,41 +82,54 @@ export const Home = ({ setIsAuthenticated }) => {
         {!weatherError && weather}
       </p> */}
       {/* <ProductFormSec /> */}
-      <span>Products</span>
-      <div className={classes.container}>
-        {productError && <p className={classes.errorMsg}>{productError}</p>}
-        {!productError &&
-          (products?.length > 0 ? (
-            products.map(({ _id, name, price, description }, index) => (
-              <ProductCard
-                key={index}
-                details={{ _id, name, price, description }}
-                setLatestProductAddedToCart={setLatestProductAddedToCart}
-              />
-            ))
-          ) : (
-            <p className={classes.notFound}>No Products found.</p>
-          ))}
+      <div className="homeWrapper">
+        <div className="ProductsWrapper">
+          <div className="ProductsTitle">
+            <span>Products</span>
+          </div>
+          <div className={classes.container}>
+            {productError && <p className={classes.errorMsg}>{productError}</p>}
+            {!productError &&
+              (products?.length > 0 ? (
+                products.map(({ _id, name, price, description }, index) => (
+                  <ProductCard
+                    key={index}
+                    details={{ _id, name, price, description }}
+                    setLatestProductAddedToCart={setLatestProductAddedToCart}
+                  />
+                ))
+              ) : (
+                <p className={classes.notFound}>No Products found.</p>
+              ))}
+          </div>
+        </div>
+
+        <div className="ProductsWrapper">
+          <div className="ProductsTitle" style={{ marginBlock: "40px 10px" }}>
+            <span>Your Products</span>
+          </div>
+        </div>
+        <div className="ShoppingCarts" style={{ display: "flex" }}>
+          {/* <div className="x-close">x</div> */}
+          <div className={classes.container}>
+            {cartError && <p className={classes.errorMsg}>{cartError}</p>}
+            {!cartError &&
+              (cart?.length > 0 ? (
+                cart.map(({ _id, name, price, description }, index) => (
+                  <ProductCard
+                    isShoppingCart={true}
+                    key={index}
+                    details={{ _id, name, price, description }}
+                  />
+                ))
+              ) : (
+                <p className={classes.notFound}>
+                  No Products found in your cart.
+                </p>
+              ))}
+          </div>
+        </div>
       </div>
-      <span>Shopping Cart</span>
-      <div className={classes.container}>
-        {cartError && <p className={classes.errorMsg}>{cartError}</p>}
-        {!cartError &&
-          (cart?.length > 0 ? (
-            cart.map(({ _id, name, price, description }, index) => (
-              <ProductCard
-                isShoppingCart={true}
-                key={index}
-                details={{ _id, name, price, description }}
-              />
-            ))
-          ) : (
-            <p className={classes.notFound}>No Products found in your cart.</p>
-          ))}
-      </div>
-      <button className={classes.logout} onClick={logoutHandler}>
-        Logout
-      </button>
     </>
   );
 };

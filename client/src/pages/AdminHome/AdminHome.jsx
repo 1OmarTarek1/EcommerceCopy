@@ -5,6 +5,7 @@ import {
   createProduct,
   updateProduct,
 } from "../../api"; // Corrected import path
+import "./AdminHome.css";
 
 function ProductForm({ onSubmit }) {
   const [name, setName] = useState("");

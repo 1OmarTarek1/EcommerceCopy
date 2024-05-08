@@ -1,0 +1,60 @@
+.homeWrapper .ShoppingCarts {
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  background-color: var(--color-components);
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  padding: 30px;
+}
+.homeWrapper .ShoppingCarts::-webkit-scrollbar {
+  /* width: 0; */
+}
+
+.homeWrapper .ShoppingCarts > div {
+  height: fit-content !important;
+  margin: 0;
+  border: none;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start;
+  flex-wrap: nowrap !important
+  ;
+}
+
+.handleShopBtn {
+  display: flex;
+}
+
+.x-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px 18px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*start Products*/
+.ProductsWrapper > div {
+  display: flex;
+  justify-content: flex-start;
+}
+.ProductsWrapper .ProductsTitle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--color-components);
+}
+.ProductsWrapper .ProductsTitle span {
+  padding: 8px 15px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: var(--color-body);
+}
+/*end Products*/

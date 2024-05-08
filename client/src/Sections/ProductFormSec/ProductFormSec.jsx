@@ -15,7 +15,7 @@ function ProductFormSec({ onSubmit }) {
   };
 
   return (
-    <div>
+    <div className="ProductFormSec">
       <h2>Add Product</h2>
       <form onSubmit={handleSubmit}>
         <input

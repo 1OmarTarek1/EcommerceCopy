@@ -1,3 +1,21 @@
+:root {
+  /* Main Colors */
+  --color-darkestB: #1f1f2b;
+  --color-darkB: #2c2d3b;
+  --color-LBlue: #8b92ee;
+  --color-light: #f5f5f5;
+  --color-lightest: #fff;
+  --color-primary: var(--color-LBlue);
+
+  /* Main Website Colors */
+  --color-body: var(--color-darkestB);
+  --color-components: var(--color-darkB);
+
+  /* Font Colors */
+  --color-navLinks: #ffffffab;
+  --color-lightFont: #ffffffa2;
+}
+
 *,
 ::after,
 ::before {
@@ -8,11 +26,33 @@ body {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  background-color: #f5f5f5;
+  background-color: var(--color-body);
 }
 .WebsiteContainer {
-  padding: 10px;
+  padding: 20px;
 }
-.UserHomePage {
-  background-color: #888;
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+span,
+a {
+  color: var(--color-light);
+  transition: all 0.2s;
+}
+
+a:hover {
+  color: var(--color-darkestB);
+}
+a:focus {
+  color: var(--color-darkestB);
 }

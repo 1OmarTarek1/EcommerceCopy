@@ -8,7 +8,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import { UserHome, AdminHome } from "./pages";
+import { AdminHome } from "./pages";
 import NavSec from "./Sections/NavSec/NavSec.jsx";
 import "./App.css";
 
@@ -17,16 +17,46 @@ function App() {
     localStorage.getItem("isAuthenticated")
   );
 
+  // open and close shope card
+  // useEffect(() => {
+  //   let shopeCard = document.querySelector(".shopeCard");
+  //   let shopingCards = document.querySelector(".ShoppingCarts");
+  //   let closeBtn = document.querySelector(".x-close");
+  //   if (isAuthenticated && shopeCard && shopingCards && closeBtn) {
+  //     let handleCloseShop = () => {
+  //       shopingCards.style.display = "none";
+  //     };
+  //     let handleClickShope = () => {
+  //       shopingCards.style.display = "flex";
+  //     };
+
+  //     closeBtn.addEventListener("click", handleCloseShop);
+  //     shopeCard.addEventListener("click", handleClickShope);
+
+  //     return () => {
+  //       shopeCard.removeEventListener("click", handleClickShope);
+  //       closeBtn.removeEventListener("click", handleCloseShop);
+  //     };
+  //   } else if (!isAuthenticated && !shopeCard && !shopingCards && !closeBtn) {
+  //     return <></>;
+  //   }
+  // }, [isAuthenticated]);
+
   useEffect(() => {
     setIsAuthenticated(localStorage.getItem("isAuthenticated"));
   }, [isAuthenticated]);
 
   return (
     <Router>
-      <NavSec
-        setIsAuthenticated={setIsAuthenticated}
-        isAuthenticated={isAuthenticated}
-      />
+      {isAuthenticated ? (
+        <NavSec
+          setIsAuthenticated={setIsAuthenticated}
+          isAuthenticated={isAuthenticated}
+        />
+      ) : (
+        <></>
+      )}
+
       <div className="WebsiteContainer">
         <Switch>
           <Route path="/" exact>
@@ -50,13 +80,6 @@ function App() {
           <Route path="/products">
             {isAuthenticated ? (
               <Home setIsAuthenticated={setIsAuthenticated} />
-            ) : (
-              <Redirect to="/" />
-            )}
-          </Route>
-          <Route path="/UserHome">
-            {isAuthenticated ? (
-              <UserHome setIsAuthenticated={setIsAuthenticated} />
             ) : (
               <Redirect to="/" />
             )}

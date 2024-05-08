@@ -1,13 +1,18 @@
 .container {
-  padding: 3rem;
-  border: 1px dashed black;
-  margin: 1rem;
-  background-color: aqua;
+  padding: 1rem;
+  border: none;
+  margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 20px;
+  background-color: var(--color-components);
+}
+
+/*start Navbar*/
+.Navbar {
+  overflow: hidden;
 }
 
 .errorMsg,
